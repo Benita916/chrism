@@ -1,204 +1,138 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHRISM - Corporate Finance Experts</title>
+  <title>CHRISM Associates - Corporate Finance Experts</title>
   <style>
-    /* --- Colors --- */
-    :root {
-      --primary-blue: #1e3a8a;
-      --gold: #fbbf24;
-      --white: #ffffff;
-    }
-
-    /* --- General Styling --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
+    /* COLORS: Blue, Gold, White */
     body {
-      background-color: var(--white);
-      color: #333;
-      scroll-behavior: smooth;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     header {
-      background-color: var(--primary-blue);
-      color: var(--white);
-      padding: 20px 0;
-      text-align: center;
+      background-color: #003366; /* deep blue */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
-    header nav a {
-      margin: 0 15px;
+    header h1 {
+      color: #ffd700; /* gold */
+      margin: 0;
+      font-size: 24px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
       font-weight: bold;
-      color: var(--white);
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
-
-    header nav a:hover {
-      color: var(--gold);
+    nav a:hover {
+      color: #ffd700;
     }
-
-    /* --- Hero Section --- */
     .hero {
-      background: url('https://images.unsplash.com/photo-1573164574395-9d5f42b83648?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1554224154-22dec7ec8818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: var(--white);
+      color: #ffffff;
       position: relative;
     }
-
     .hero::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background-color: rgba(30, 58, 138, 0.7);
-      z-index: 0;
+      top:0; left:0;
+      width:100%; height:100%;
+      background-color: rgba(0,0,0,0.5);
     }
-
     .hero-content {
+      position: relative;
       z-index: 1;
-      max-width: 800px;
     }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .hero h2 {
+      font-size: 48px;
+      margin: 0 0 10px 0;
     }
-
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 20px;
+      margin: 10px 0 30px 0;
     }
-
     .hero button {
-      background-color: var(--gold);
-      border: none;
-      padding: 12px 25px;
+      padding: 15px 30px;
       margin: 5px;
-      font-size: 1rem;
+      border: none;
+      background-color: #ffd700;
+      color: #003366;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
       border-radius: 5px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      font-size: 16px;
     }
-
     .hero button:hover {
-      transform: scale(1.05);
-      background-color: #f59e0b;
+      background-color: #e6c200;
     }
-
-    /* --- Sections --- */
     section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 60px 30px;
     }
-
     section h2 {
-      color: var(--primary-blue);
-      font-size: 2rem;
-      margin-bottom: 20px;
+      color: #003366;
       text-align: center;
-      position: relative;
+      margin-bottom: 40px;
+      font-size: 32px;
     }
-
-    section h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background-color: var(--gold);
-      margin: 10px auto 0 auto;
-      border-radius: 2px;
-    }
-
-    .services, .team, .details {
+    .services, .team {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
     }
-
-    .service-card, .team-card, .detail-card {
-      background-color: var(--white);
-      border: 1px solid #ddd;
-      border-radius: 10px;
+    .card {
+      background-color: #f7f7f7;
       padding: 20px;
-      flex: 1 1 250px;
-      min-width: 250px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover, .team-card:hover, .detail-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .team-card h3, .service-card h3 {
-      color: var(--primary-blue);
-      margin-bottom: 10px;
-    }
-
-    .team-card p, .service-card p, .detail-card p {
-      margin-bottom: 5px;
-    }
-
-    /* --- Buttons --- */
-    .btn {
-      display: inline-block;
-      background-color: var(--gold);
-      color: var(--primary-blue);
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 5px;
-      margin-top: 10px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      background-color: #f59e0b;
-    }
-
-    /* --- Footer --- */
-    footer {
-      background-color: var(--primary-blue);
-      color: var(--white);
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 20px 0;
+      transition: 0.3s;
     }
-
-    /* --- Smooth Scroll Anchor --- */
-    html {
-      scroll-behavior: smooth;
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
+    .card h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    footer {
+      background-color: #003366;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    a.button-link {
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Header / Navigation -->
   <header>
+    <h1>CHRISM Associates</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -207,89 +141,104 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Driving Financial Growth. Empowering Strategic Decisions.</h1>
-      <p>Corporate finance, mergers & acquisitions, regulatory compliance, AI-driven financial analytics, and more.</p>
-      <button onclick="scrollToSection('#contact')">Book a Consultation – 08037505184</button>
-      <button onclick="scrollToSection('#contact')">Contact Our Experts – 08033135605, 08186127812</button>
+      <h2>Driving Financial Growth</h2>
+      <p>Empowering Strategic Decisions</p>
+      <button onclick="scrollToSection('contact')">Book a Consultation 08037505184</button>
+      <button onclick="scrollToSection('contact')">Contact Our Experts</button>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
-    <h2>About CHRISM</h2>
+    <h2>About CHRISM Associates</h2>
     <p>
-      CHRISM provides expert financial advisory and strategic guidance to businesses, helping them grow, optimize, and innovate.
-      Our team combines deep industry experience with cutting-edge analytics to deliver actionable insights and measurable results.
+      <a href="#about" style="color:#003366; font-weight:bold;">CHRISM Associates</a> is a professional corporate finance and advisory firm dedicated to driving sustainable financial growth and empowering strategic decision-making for businesses across diverse industries. We provide tailored solutions in corporate finance, M&A, risk management, investment, compliance, and AI-driven analytics.
     </p>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-      <div class="service-card"><h3>Corporate Finance Advisory</h3><p>Financial planning, budgeting, cash flow, and strategic investment decisions.</p></div>
-      <div class="service-card"><h3>Mergers & Acquisitions</h3><p>Due diligence, deal structuring, integration planning, and synergy analysis.</p></div>
-      <div class="service-card"><h3>Risk Management</h3><p>Risk assessment, mitigation strategies, compliance, and insurance analysis.</p></div>
-      <div class="service-card"><h3>Investment & Asset Management</h3><p>Portfolio management, asset allocation, research, and performance monitoring.</p></div>
-      <div class="service-card"><h3>Banking & Capital Markets</h3><p>Lending, debt & equity advisory, market analysis, and fundraising support.</p></div>
-      <div class="service-card"><h3>Taxation & Compliance</h3><p>Tax planning, regulatory compliance, reporting, and audits.</p></div>
-      <div class="service-card"><h3>Accounting & Reporting</h3><p>Financial statements, cost analysis, audits, and IFRS/GAAP compliance.</p></div>
-      <div class="service-card"><h3>Consulting & Advisory</h3><p>Business performance improvement, strategy development, and process optimization.</p></div>
-      <div class="service-card"><h3>Advanced & Specialized Roles</h3><p>Business valuation, treasury management, AI-driven analytics, and corporate governance.</p></div>
+      <div class="card">
+        <h3>Corporate Finance Advisory</h3>
+        <p>Financial planning, capital structure, budgeting, and strategic investment guidance for businesses.</p>
+      </div>
+      <div class="card">
+        <h3>Mergers & Acquisitions (M&A)</h3>
+        <p>Target evaluation, due diligence, deal structuring, negotiation, and post-merger integration.</p>
+      </div>
+      <div class="card">
+        <h3>Risk Management</h3>
+        <p>Identifying and mitigating financial, operational, and regulatory risks with actionable strategies.</p>
+      </div>
+      <div class="card">
+        <h3>Investment & Asset Management</h3>
+        <p>Portfolio management, asset allocation, investment research, and performance monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>Banking & Capital Markets</h3>
+        <p>Debt & equity issuance advisory, lending analysis, market insights, and investor relations.</p>
+      </div>
+      <div class="card">
+        <h3>Taxation & Regulatory Compliance</h3>
+        <p>Tax planning, regulatory guidance, internal audits, and compliance reporting support.</p>
+      </div>
+      <div class="card">
+        <h3>Accounting & Reporting</h3>
+        <p>Financial statements, cost accounting, profitability analysis, and IFRS/GAAP compliance.</p>
+      </div>
+      <div class="card">
+        <h3>Consulting & Advisory</h3>
+        <p>Business performance improvement, strategy development, and corporate restructuring support.</p>
+      </div>
+      <div class="card">
+        <h3>Advanced Roles</h3>
+        <p>Business valuation, treasury management, financial modeling, AI-driven analytics, and governance advisory.</p>
+      </div>
     </div>
-    <div style="text-align:center; margin-top:30px;"><a href="#contact" class="btn">Explore Our Services</a></div>
   </section>
 
-  <!-- Team Section -->
   <section id="team">
     <h2>Meet Our Experts</h2>
     <div class="team">
-      <div class="team-card">
-        <h3>Ambassador Chinedu Anowuru, FCIB, FNIM, FICMA, FCAI, CMC, FIMC, LLB</h3>
-        <p>Executive Director – Expert in corporate finance and M&A.</p>
-        <p>📧 <a href="mailto:chinanowuru@yahoo.com">chinanowuru@yahoo.com</a></p>
-        <p>📞 08037505184</p>
+      <div class="card">
+        <h3>Ambassador Chinedum Anowuru, FCIB, FNIM, FICMA, FCAI, CMC, FIMC, LLB – Executive Director</h3>
+        <p>Expert in corporate finance and M&A, driving complex transactions with strategic insight.</p>
+        <p>Email: <a class="button-link" href="mailto:chinanowuru@yahoo.com">chinanowuru@yahoo.com</a><br>Phone: 08037505184</p>
       </div>
-      <div class="team-card">
-        <h3>Innocent Adjeroh, FCA</h3>
-        <p>Corporate Finance Strategist – Specialist in audits, investment planning, and optimization.</p>
-        <p>📞 08033135605</p>
+      <div class="card">
+        <h3>Innocent Adjeroh, FCA – Corporate Finance Strategist</h3>
+        <p>Specialist in financial audits, investment planning, and performance optimization.</p>
+        <p>Phone: 08033135605</p>
       </div>
-      <div class="team-card">
-        <h3>Dr. Benita Ezeala, PhD Corporate Finance, ACIB, CAMS</h3>
-        <p>Business & Financial Analyst | AI Automotive Engineer | Regulatory Compliance Officer</p>
-        <p>📧 <a href="mailto:benitaezeala@gmail.com">benitaezeala@gmail.com</a></p>
-        <p>📞 08186127812</p>
+      <div class="card">
+        <h3>Dr. Benita Ezeala, PhD Corporate Finance, ACIB, CAMS – Business & Financial Analyst | AI Automotive Engineer | Regulatory Compliance Officer</h3>
+        <p>Combining advanced finance knowledge with AI analytics to guide smart business decisions.</p>
+        <p>Email: <a class="button-link" href="mailto:benitaezeala@gmail.com">benitaezeala@gmail.com</a><br>Phone: 08186127812</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:30px;"><a href="#contact" class="btn">Meet the Team</a></div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Reach out to our experts for consultation or inquiries:</p>
-    <p>📞 Ambassador Chinedu Anowuru – 08037505184</p>
-    <p>📞 Innocent Adjeroh – 08033135605</p>
-    <p>📞 Dr. Benita Ezeala – 08186127812</p>
-    <p>📧 Email – <a href="mailto:benitaezeala@gmail.com">benitaezeala@gmail.com</a></p>
+    <p>Call or email us directly to schedule consultations or inquiries:</p>
+    <ul>
+      <li>Ambassador Chinedum Anowuru: 08037505184 | <a class="button-link" href="mailto:chinanowuru@yahoo.com">Email</a></li>
+      <li>Innocent Adjeroh: 08033135605</li>
+      <li>Dr. Benita Ezeala: 08186127812 | <a class="button-link" href="mailto:benitaezeala@gmail.com">Email</a></li>
+    </ul>
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2026 CHRISM | Driving Financial Growth. Empowering Strategic Decisions.
+    &copy; 2026 CHRISM Associates. All rights reserved.
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Smooth scroll function for buttons
-    function scrollToSection(sectionId) {
-      document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({behavior: 'smooth'});
     }
   </script>
-
 </body>
 </html>
+
